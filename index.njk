@@ -2,21 +2,78 @@
 
 {% block content %}
 
-<div class="relative h-screen w-full flex items-center justify-center bg-cover bg-center text-center px-5" style="background-image:url(images/bg.webp);">
-  <div class="absolute top-0 right-0 bottom-0 left-0 bg-gray-900 opacity-75"></div>
+<section class="bg-gray-50">
+  <div class="grid py-8 px-4 mx-auto max-w-screen-xl lg:gap-8 xl:gap-0 lg:py-10 lg:grid-cols-12">
+    <div class="mx-auto lg:col-span-12">
+      <h1 class="mb-4 mx-auto max-w-2xl text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl">Empower Your Trades, Simplify Your Success.</h1>
+      <p class="mb-6 mx-auto max-w-xl font-light text-center lg:mb-8 md:text-lg lg:text-xl ">Conduct advanced technical analysis with TradingAssistant, powered by TradingView, the widely-used charting library trusted by millions of traders.</p>
+      <div class="text-center">
+        <a href='https://app.tradingassistant.io/' class="mx-auto inline-flex justify-center items-center py-3 px-5 mr-3 text-base font-medium text-center rounded-lg">
+          Get started
+          <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a>
+      </div>
 
-  <div class="z-50 flex flex-col justify-center text-white w-full h-screen">
-    <h1 class="text-5xl mb-6">Trading Assistant</h1>
-    <h2 class="text-3xl mb-10">An opinionated semi-automated crypto trading strategy</h2>
-
-    <div class="mt-5 mb-5">
-      <div class="shadow w-full bg-white mt-2 max-w-2xl mx-auto rounded-full">
-        <div class="rounded-full bg-indigo-600 text-xs leading-none text-center text-white py-1" style="width: 95%">95%</div>
+      <div class="powered-by">
+        <div class="flex flex-row justify-center items-center">
+          <p class="s-subtitle">Powered by</p>
+          <a href='https://www.tradingview.com/'>
+            <img src="https://www.morpher.com/tradingview/images/tview_logo.svg" alt="TradingView logo" class="m-logo h-6 ml-2">
+          </a>
+        </div>
       </div>
     </div>
-
-    <p class="text-xl">Stay tuned for something amazing!!!</p>
   </div>
-</div>
+</section>
+
+<section class="bg-gray-50">
+  <div class="py-8 px-4 mx-auto ma x-w-screen-xl sm:py-16 lg:px-6">
+    <div class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
+      <div class='border-solid border-2 border-slate-300 p-6'>
+        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+          <img src="https://www.svgrepo.com/show/483138/stock-price-candlestick-graph.svg" alt="Candle Stick" class="w-10 h-10 text-primary-600">
+        </div>
+        <h3 class="mb-2 text-xl font-bold">Technical Indicators</h3>
+        <p>Utilize over 100 popular indicators, including EMA, RSI, MACD, Bollinger Bands, Aroon, and many others.</p>
+      </div>
+      <div class='border-solid border-2 border-slate-300 p-6'>
+        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+          <img src="https://www.svgrepo.com/show/487227/compare.svg" alt="Candle Stick" class="w-10 h-10 text-primary-600">
+        </div>
+        <h3 class="mb-2 text-xl font-bold">Compare Markets</h3>
+        <p>Analyze price changes across markets to uncover trends and insights.</p>
+      </div>
+      <div class='border-solid border-2 border-slate-300 p-6'>
+        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+          <img src="https://www.svgrepo.com/show/504257/data-monitor.svg" alt="Candle Stick" class="w-10 h-10 text-primary-600">
+        </div>
+        <h3 class="mb-2 text-xl font-bold">Unique Data</h3>
+        <p>Dive deep into the analysis of crypto markets.</p>
+      </div>
+      <div class='border-solid border-2 border-slate-300 p-6'>
+        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+          <img src="https://www.svgrepo.com/show/487632/notification-bell.svg" alt="Candle Stick" class="w-10 h-10 text-primary-600">
+        </div>
+        <h3 class="mb-2 text-xl font-bold">Real Time Alerts</h3>
+        <p>Real-Time alerts for price movements and market conditions</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="powered-by mb-6">
+    <div class="mx-auto max-w-2xl">
+      <p class="mb-6 mx-auto max-w-xl font-light text-center lg:mb-8 md:text-lg lg:text-xl ">
+        Our advanced charts are powered by TradingView, a global platform for investors where you can track prices of the most popular and active stocks and other assets, read news, and find trade ideas.
+      </p>
+    </div>
+    <div class="mx-auto max-w-2xl pb-12">
+      <div class="flex flex-row justify-center items-center">
+        <a href='https://www.tradingview.com/'>
+          <img src="https://www.morpher.com/tradingview/images/tview_logo.svg" alt="TradingView logo" class="m-logo h-10 ml-2">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
