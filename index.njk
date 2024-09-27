@@ -2,21 +2,71 @@
 
 {% block content %}
 
-<div class="relative h-screen w-full flex items-center justify-center bg-cover bg-center text-center px-5" style="background-image:url(images/bg.webp);">
-  <div class="absolute top-0 right-0 bottom-0 left-0 bg-gray-900 opacity-75"></div>
+<section id="hero" class="bg-gray-50 pt-6 px-4 pb-12">
+  <h1 class="mb-6 mx-auto text-center max-w-2xl text-4xl font-extrabold md:text-5xl xl:text-6xl">
+    <span class="block">Buy low, sell high,</span>
+    <span class="block mb-2">and win every trade</span>
+    <span class="block text-xl">with Trading Assistant</span>
+  </h1>
+  <p class="mb-6 mx-auto max-w-xl font-light text-center lg:mb-8 md:text-lg lg:text-xl">Cultivate profits in short-term trading by capitalizing on market volatility. The QFL strategy emphasizes disciplined "buy low, sell high" moves using key entry and exit points for swift gains. Ideal for active traders seeking quick, strategic wins.</p>
+  <p class="mb-4 mx-auto max-w-xl font-light text-center lg:mb-8 md:text-lg lg:text-xl">QFL stands for QuickFingersLuc. It is a trading strategy the combines mean reversion, martingale and experience to identify the moment of panic selling, buying below the base level and utilizing safe trades.</p>
+  <a href="https://app.tradingassistant.io/users/sign_up" class="w-48 mx-auto flex justify-center items-center font-medium text-center rounded-lg text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-md px-5 py-2.5 text-center">
+    Get started
+    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+  </a>
+</section>
 
-  <div class="z-50 flex flex-col justify-center text-white w-full h-screen">
-    <h1 class="text-5xl mb-6">Trading Assistant</h1>
-    <h2 class="text-3xl mb-10">An opinionated semi-automated crypto trading strategy</h2>
-
-    <div class="mt-5 mb-5">
-      <div class="shadow w-full bg-white mt-2 max-w-2xl mx-auto rounded-full">
-        <div class="rounded-full bg-indigo-600 text-xs leading-none text-center text-white py-1" style="width: 95%">95%</div>
-      </div>
-    </div>
-
-    <p class="text-xl">Stay tuned for something amazing!!!</p>
+<section id="powered-by-tv" class="bg-gray-50">
+  <div class="flex flex-row justify-center items-center">
+    <p class="s-subtitle">Powered by</p>
+    <a href="https://www.tradingview.com/" target="_blank">
+      <svg class="inline h-6 ml-3" viewBox="0 0 1508 257" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M375.342 203.117H405.008V86.8882H443.819V58.847H336.938V86.8882H375.342V203.117Z" fill="#131722"/>
+      <path d="M443.862 203.117H471.7V154.553C471.7 137.687 480.437 127.527 493.645 127.527C498.318 127.527 501.976 128.34 506.243 129.763V101.518C502.789 100.502 499.944 100.299 496.896 100.299C485.517 100.299 475.154 107.817 471.7 117.774V101.518H443.862V203.117Z" fill="#131722"/>
+      <path d="M559.674 205.352C573.695 205.352 584.261 198.24 588.935 191.738V203.117H616.773V101.518H588.935V112.897C584.261 106.395 573.695 99.2832 559.674 99.2832C532.649 99.2832 511.923 123.667 511.923 152.317C511.923 180.968 532.649 205.352 559.674 205.352ZM565.567 179.952C550.124 179.952 539.964 168.37 539.964 152.317C539.964 136.265 550.124 124.683 565.567 124.683C581.01 124.683 591.17 136.265 591.17 152.317C591.17 168.37 581.01 179.952 565.567 179.952Z" fill="#131722"/>
+      <path d="M683.053 205.352C697.073 205.352 707.639 198.24 712.313 191.738V203.117H740.151V50.7192H712.313V112.897C707.639 106.395 697.073 99.2832 683.053 99.2832C656.028 99.2832 635.302 123.667 635.302 152.317C635.302 180.968 656.028 205.352 683.053 205.352ZM688.945 179.952C673.502 179.952 663.343 168.37 663.343 152.317C663.343 136.265 673.502 124.683 688.945 124.683C704.388 124.683 714.548 136.265 714.548 152.317C714.548 168.37 704.388 179.952 688.945 179.952Z" fill="#131722"/>
+      <path d="M779 84.8562C788.956 84.8562 796.881 76.9315 796.881 67.1781C796.881 57.4247 788.956 49.5 779 49.5C769.449 49.5 761.322 57.4247 761.322 67.1781C761.322 76.9315 769.449 84.8562 779 84.8562ZM765.182 203.117H793.02V101.518H765.182V203.117Z" fill="#131722"/>
+      <path d="M817.72 203.117H845.558V153.537C845.558 134.03 855.108 124.683 868.112 124.683C879.695 124.683 885.994 133.623 885.994 148.254V203.117H913.832V143.58C913.832 117.164 899.202 99.2832 874.615 99.2832C861.407 99.2832 851.044 104.973 845.558 113.101V101.518H817.72V203.117Z" fill="#131722"/>
+      <path d="M984.673 176.701C970.652 176.701 958.867 166.135 958.867 150.692C958.867 135.046 970.652 124.683 984.673 124.683C998.693 124.683 1010.48 135.046 1010.48 150.692C1010.48 166.135 998.693 176.701 984.673 176.701ZM981.422 247.617C1012.51 247.617 1036.08 231.767 1036.08 195.192V101.518H1008.24V112.897C1002.76 104.973 991.785 99.2832 978.78 99.2832C952.161 99.2832 930.826 122.041 930.826 150.692C930.826 179.139 952.161 201.897 978.78 201.897C991.785 201.897 1002.76 196.005 1008.24 188.486V195.395C1008.24 211.651 997.474 223.233 981.015 223.233C969.636 223.233 958.257 219.372 949.316 210.635L934.077 231.361C945.659 242.537 963.743 247.617 981.422 247.617Z" fill="#131722"/>
+      <path d="M1094.94 203.117H1121.15L1180.89 58.847H1148.38L1108.15 159.023L1067.31 58.847H1035.4L1094.94 203.117Z" fill="#131722"/>
+      <path d="M1206.43 84.8562C1216.39 84.8562 1224.32 76.9315 1224.32 67.1781C1224.32 57.4247 1216.39 49.5 1206.43 49.5C1196.88 49.5 1188.76 57.4247 1188.76 67.1781C1188.76 76.9315 1196.88 84.8562 1206.43 84.8562ZM1192.62 203.117H1220.46V101.518H1192.62V203.117Z" fill="#131722"/>
+      <path d="M1292.5 205.352C1313.84 205.352 1330.09 196.411 1339.64 182.594L1318.92 167.151C1314.24 174.263 1305.5 179.952 1292.7 179.952C1279.29 179.952 1267.3 172.434 1265.68 158.82H1341.67C1342.28 154.553 1342.08 151.708 1342.08 149.27C1342.08 116.148 1318.71 99.2832 1292.09 99.2832C1261.21 99.2832 1238.65 122.244 1238.65 152.317C1238.65 184.423 1262.22 205.352 1292.5 205.352ZM1266.69 139.922C1269.34 127.527 1280.92 122.244 1291.28 122.244C1301.64 122.244 1311.8 127.731 1314.24 139.922H1266.69Z" fill="#131722"/>
+      <path d="M1446.37 203.117H1474.01L1507.54 101.518H1477.67L1458.57 166.541L1437.84 101.518H1416.5L1395.98 166.541L1376.68 101.518H1347.01L1380.74 203.117H1408.38L1427.27 145.409L1446.37 203.117Z" fill="#131722"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M112.284 203.186H58.8155V112.289H0V58.8203H112.284V203.186ZM192.487 90.9015C192.487 108.619 178.124 122.983 160.406 122.983C142.688 122.983 128.325 108.619 128.325 90.9015C128.325 73.1835 142.688 58.8203 160.406 58.8203C178.124 58.8203 192.487 73.1835 192.487 90.9015ZM160.406 203.186L221.895 58.8203H286.057L224.568 203.186H160.406Z" fill="#131722"/>
+      </svg>
+    </a>
   </div>
-</div>
+
+  <div class="py-8 px-4 mx-auto sm:py-16 lg:px-6">
+    <img src="images/chart.webp" alt="Trading Assistant Chart with Bases" class="w-full md:w-2/3 h-auto mx-auto">
+  </div>
+
+  <div class="p-4 grid grid-cols-1 gap-6 lg:w-3/4 lg:mx-auto md:grid-cols-2 md:gap-12">
+    <div class="border-solid border-2 border-slate-300 p-6">
+      <svg class="w-10 h-10 mx-auto mb-4" viewBox="0 0 49 49" xmlns="http://www.w3.org/2000/svg"><rect fill="#99ecd2" height="17" rx="1" width="12" x="2.44629" y="20.0683"/><path d="m2.44629 44.0683 2.5-1 5 2.5 5.00001-3.5 5 3 4.5-1.5 3.5 1.5 7-1 4.5-2.5 2.5 2.5 4 1" stroke="#619bf8" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><rect fill="#00c386" height="34" rx="1" width="12" x="18.4463" y="3.06828"/><rect fill="#f32d50" height="22" rx="1" width="12" x="34.4463" y="15.0683"/></svg>
+      <h3 class="mb-4 text-xl text-center font-bold">Technical Indicators</h3>
+      <p class="text-center">Utilize over 100 popular indicators, including EMA, RSI, MACD, Bollinger Bands, Aroon, and many others.</p>
+    </div>
+    <div class="border-solid border-2 border-slate-300 p-6">
+      <svg class="w-10 h-10 mx-auto mb-4" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="m37.8465 20.5c-.5192 0-.8654-.175-1.2115-.525-.6924-.7-.6924-1.75 0-2.45l5.7115-5.775-5.7115-5.775c-.6924-.7-.6924-1.75 0-2.45.6923-.7 1.7307-.7 2.423 0l6.9231 7c.6923.7.6923 1.75 0 2.45l-6.9231 7c-.3461.35-.6923.525-1.2115.525z" fill="#00c386"/><path d="m37.8465 44.9995c-.5192 0-.8654-.175-1.2115-.525-.6924-.7-.6924-1.75 0-2.45l5.7115-5.775-5.7115-5.775c-.6924-.7-.6924-1.75 0-2.45.6923-.7 1.7307-.7 2.423 0l6.9231 7c.6923.7.6923 1.75 0 2.45l-6.9231 7c-.3461.35-.6923.525-1.2115.525z" fill="#f32d50"/><path d="m8.42308 38.0005h-5.19231c-1.03846 0-1.73077-.7-1.73077-1.75s.69231-1.75 1.73077-1.75h5.19231c5.71152 0 10.38462-4.725 10.38462-10.5 0-7.7 6.2308-14 13.8461-14h8.6539c1.0385 0 1.7308.7 1.7308 1.75s-.6923 1.75-1.7308 1.75h-8.6539c-5.7115 0-10.3846 4.725-10.3846 10.5 0 7.7-6.2307 14-13.84612 14z" fill="#00c386"/><g fill="#f32d50"><path d="m16.9038 15.5005c-.5192 0-.8653-.175-1.2115-.525-1.9038-1.925-4.5-2.975-7.26922-2.975h-5.19231c-1.03846 0-1.73077-.7-1.73077-1.75 0-1.05001.69231-1.75001 1.73077-1.75001h5.19231c3.63462 0 7.09612 1.4 9.69232 4.02501.6923.7.6923 1.75 0 2.45-.3462.35-.6923.525-1.2116.525z"/><path d="m41.3075 37.9998h-8.6538c-3.6346 0-7.0962-1.4-9.6923-3.85-.6923-.7-.6923-1.75 0-2.45s1.7307-.7 2.423 0c2.077 1.75 4.5 2.8 7.2693 2.8h8.6538c1.0385 0 1.7308.7 1.7308 1.75s-.6923 1.75-1.7308 1.75z"/></g></svg>
+      <h3 class="mb-4 text-xl text-center font-bold">Compare Markets</h3>
+      <p class="text-center">Analyze price changes across markets to uncover trends and insights.</p>
+    </div>
+    <div class="border-solid border-2 border-slate-300 p-6">
+      <svg class="w-10 h-10 mx-auto mb-4" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-linejoin="round"><path d="m24 41.0195c2.123 1.8535 4.9266 2.9805 8 2.9805 6.6274 0 12-5.2405 12-11.705 0-5.3978-3.7459-9.9423-8.8403-11.295" stroke="#eda243" stroke-width="4"/><path d="m32 28v5.0909l3.1818 1.9091" stroke="#eda243" stroke-width="2.54545"/><path d="m12.8404 20.4203c-5.09453 1.3869-8.8404 6.0458-8.8404 11.5797 0 6.6274 5.37258 12 12 12 6.6274 0 12-5.3726 12-12 0-1.561-.2981-3.0524-.8404-4.4203m-3.1596.4203c-6.6274 0-12-5.3726-12-12" stroke="#619bf8" stroke-width="4"/><path d="m15 28v5.0909l3.1818 1.9091" stroke="#619bf8" stroke-width="2.54545"/><g stroke="#00c386"><path d="m24 28c6.6274 0 12-5.3726 12-12 0-6.62742-5.3726-12-12-12s-12 5.37258-12 12c0 6.6274 5.3726 12 12 12z" stroke-width="4"/><path d="m24 12v5.0909l3.1818 1.9091" stroke-width="2.54545"/></g></g></svg>
+      <h3 class="mb-4 text-xl text-center font-bold">Custom Timeframes</h3>
+      <p class="text-center">Dive into the data in minutes, hours and days.</p>
+    </div>
+    <div class="border-solid border-2 border-slate-300 p-6">
+      <svg class="w-10 h-10 mx-auto mb-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10 21h4a2 2 0 0 1 -4 0zm-6.924-2.617a1 1 0 0 1 .217-1.09l1.707-1.707v-5.586a7.006 7.006 0 0 1 6-6.92v-1.08a1 1 0 0 1 2 0v1.08a7.006 7.006 0 0 1 6 6.92v5.586l1.707 1.707a1 1 0 0 1 -.707 1.707h-16a1 1 0 0 1 -.924-.617zm3.338-1.383h11.172l-.293-.293a1 1 0 0 1 -.293-.707v-6a5 5 0 0 0 -10 0v6a1 1 0 0 1 -.293.707z"/></svg>
+      <h3 class="mb-4 text-xl text-center font-bold">Real Time Alerts</h3>
+      <p class="text-center">Real-Time alerts for price movements and market conditions</p>
+    </div>
+  </div>
+
+  <p class="p-4 mb-4 mx-auto max-w-xl font-light text-center lg:mb-8 md:text-lg lg:text-xl">
+    Our advanced charts are powered by TradingView, a global platform for investors where you can track prices of the most popular and active stocks and other assets, read news, and find trade ideas.
+  </p>
+</section>
 
 {% endblock %}
