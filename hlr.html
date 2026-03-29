@@ -1,0 +1,289 @@
+---
+permalink: /hlr/index.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HLR — SFP / BO Decision Tree</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f1117; color: #e1e4e8; padding: 40px;
+    max-width: 900px; margin: 0 auto;
+  }
+
+  /* Header */
+  .header { margin-bottom: 36px; }
+  h1 { font-size: 24px; font-weight: 700; color: #f0f0f0; margin-bottom: 4px; }
+  h1 .dim { color: #6e7681; font-weight: 400; }
+  .subtitle { font-size: 13px; color: #6e7681; }
+
+  /* Trigger */
+  .trigger {
+    background: #1c1f2b; border-left: 3px solid #f0883e;
+    padding: 14px 20px; margin-bottom: 36px; border-radius: 0 8px 8px 0;
+  }
+  .trigger-label { color: #f0883e; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
+  .trigger-text { font-size: 15px; color: #c9d1d9; }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 11px; font-weight: 700; color: #8b949e;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 12px; padding-bottom: 8px;
+    border-bottom: 1px solid #21262d;
+  }
+  .section-number {
+    display: inline-block; width: 20px; height: 20px; border-radius: 50%;
+    background: #21262d; color: #8b949e; font-size: 11px; font-weight: 700;
+    text-align: center; line-height: 20px; margin-right: 8px;
+  }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    background: #161b22; text-align: left; padding: 10px 16px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+    color: #6e7681; border-bottom: 2px solid #30363d;
+  }
+  td {
+    padding: 12px 16px; border-bottom: 1px solid #1c2028;
+    font-size: 14px; line-height: 1.5;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  /* Status tags */
+  .tag {
+    display: inline-block; padding: 3px 10px; border-radius: 4px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.3px;
+  }
+  .tag-sfp { background: rgba(63,185,80,0.12); color: #3fb950; }
+  .tag-bo { background: rgba(248,81,73,0.12); color: #f85149; }
+  .tag-flip { background: rgba(210,153,34,0.12); color: #d29922; }
+  .tag-confirm-sfp { background: rgba(63,185,80,0.25); color: #3fb950; border: 1px solid rgba(63,185,80,0.4); }
+  .tag-confirm-bo { background: rgba(248,81,73,0.25); color: #f85149; border: 1px solid rgba(248,81,73,0.4); }
+
+  /* Colored text */
+  .green { color: #3fb950; font-weight: 600; }
+  .red { color: #f85149; font-weight: 600; }
+  .dim { color: #6e7681; }
+  .bold { font-weight: 600; color: #c9d1d9; }
+
+  /* Action boxes */
+  .action-row td { background: #131620; }
+  .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .action-card {
+    border-radius: 8px; padding: 16px 20px;
+  }
+  .action-card-sfp {
+    background: rgba(63,185,80,0.06); border: 1px solid rgba(63,185,80,0.2);
+  }
+  .action-card-bo {
+    background: rgba(248,81,73,0.06); border: 1px solid rgba(248,81,73,0.2);
+  }
+  .action-card .action-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 10px;
+  }
+  .action-card .action-item {
+    font-size: 13px; margin-bottom: 6px; line-height: 1.5;
+  }
+  .action-card .action-item:last-child { margin-bottom: 0; }
+  .action-label { color: #6e7681; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+
+  /* Level headings */
+  .level-heading {
+    font-size: 18px; font-weight: 700; color: #c9d1d9;
+    margin: 48px 0 24px 0; padding-bottom: 10px;
+    border-bottom: 2px solid #21262d;
+  }
+  .level-heading:first-of-type { margin-top: 0; }
+  .level-heading .dim { color: #6e7681; font-weight: 400; font-size: 14px; }
+
+  @media (max-width: 600px) {
+    body { padding: 20px; }
+    .action-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SFP / BO Decision Tree <span class="dim">— Trinity HLR</span></h1>
+  <div class="subtitle">Level breached &rarr; 1H candles set direction &rarr; 4H close confirms</div>
+</div>
+
+<!-- ===== SWING LOW (Support) ===== -->
+<h2 class="level-heading level-heading-low">Swing Low <span class="dim">(Support)</span></h2>
+
+<!-- Trigger -->
+<div class="trigger">
+  <div class="trigger-label">Trigger</div>
+  <div class="trigger-text">Price breaches <strong>below</strong> a 4H swing low. Evaluation starts on the 1H candle that contains the breach (C0).</div>
+</div>
+
+<!-- Phase 1: Live reads -->
+<div class="section">
+  <div class="section-title"><span class="section-number">1</span> Every 1H candle close &mdash; live status</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:35%">1H candle closes&hellip;</th>
+        <th style="width:25%">Status</th>
+        <th style="width:40%">Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="green">Above</span> the level</td>
+        <td><span class="tag tag-sfp">SFP attempt</span></td>
+        <td>Buyers reclaimed. Flips from BO if needed.</td>
+      </tr>
+      <tr>
+        <td><span class="red">Below</span> the level</td>
+        <td><span class="tag tag-bo">BO attempt</span></td>
+        <td>Sellers holding. Flips from SFP if needed.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Phase 2: Confirmation -->
+<div class="section">
+  <div class="section-title"><span class="section-number">2</span> 4H candle close &mdash; confirmation</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:30%">Last attempt status</th>
+        <th style="width:25%">4H closes&hellip;</th>
+        <th style="width:20%">Result</th>
+        <th style="width:25%">Signal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="tag tag-sfp">SFP attempt</span></td>
+        <td><span class="green">Above</span> the level</td>
+        <td><span class="tag tag-confirm-sfp">SFP confirmed</span></td>
+        <td class="green">Long signal</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-bo">BO attempt</span></td>
+        <td><span class="red">Below</span> the level</td>
+        <td><span class="tag tag-confirm-bo">BO confirmed</span></td>
+        <td class="red">Level lost</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Phase 3: Actions -->
+<div class="section">
+  <div class="section-title"><span class="section-number">3</span> What to do</div>
+  <div class="action-grid">
+    <div class="action-card action-card-sfp">
+      <div class="action-title green">SFP confirmed</div>
+      <div class="action-item"><span class="action-label">Entry</span><br>Long at or just above the level</div>
+      <div class="action-item"><span class="action-label">Stop-loss</span><br>Below the wick extreme</div>
+      <div class="action-item"><span class="action-label">Thesis</span><br>Breach was a liquidity sweep, buyers absorbed it</div>
+    </div>
+    <div class="action-card action-card-bo">
+      <div class="action-title red">BO confirmed</div>
+      <div class="action-item"><span class="action-label">Entry</span><br>Wait for retest of level from below</div>
+      <div class="action-item"><span class="action-label">Stop-loss</span><br>Above the old level</div>
+      <div class="action-item"><span class="action-label">Thesis</span><br>Support broken, now resistance</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SWING HIGH (Resistance) ===== -->
+<h2 class="level-heading level-heading-high">Swing High <span class="dim">(Resistance)</span></h2>
+
+<!-- Trigger -->
+<div class="trigger" style="border-left-color: #a371f7;">
+  <div class="trigger-label" style="color: #a371f7;">Trigger</div>
+  <div class="trigger-text">Price breaches <strong>above</strong> a 4H swing high. Evaluation starts on the 1H candle that contains the breach (C0).</div>
+</div>
+
+<!-- Phase 1: Live reads -->
+<div class="section">
+  <div class="section-title"><span class="section-number">1</span> Every 1H candle close &mdash; live status</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:35%">1H candle closes&hellip;</th>
+        <th style="width:25%">Status</th>
+        <th style="width:40%">Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="red">Below</span> the level</td>
+        <td><span class="tag tag-sfp">SFP attempt</span></td>
+        <td>Sellers pushed back. Flips from BO if needed.</td>
+      </tr>
+      <tr>
+        <td><span class="green">Above</span> the level</td>
+        <td><span class="tag tag-bo">BO attempt</span></td>
+        <td>Buyers holding above. Flips from SFP if needed.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Phase 2: Confirmation -->
+<div class="section">
+  <div class="section-title"><span class="section-number">2</span> 4H candle close &mdash; confirmation</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:30%">Last attempt status</th>
+        <th style="width:25%">4H closes&hellip;</th>
+        <th style="width:20%">Result</th>
+        <th style="width:25%">Signal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="tag tag-sfp">SFP attempt</span></td>
+        <td><span class="red">Below</span> the level</td>
+        <td><span class="tag tag-confirm-sfp">SFP confirmed</span></td>
+        <td class="red">Short signal</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-bo">BO attempt</span></td>
+        <td><span class="green">Above</span> the level</td>
+        <td><span class="tag tag-confirm-bo">BO confirmed</span></td>
+        <td class="green">Level broken</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Phase 3: Actions -->
+<div class="section">
+  <div class="section-title"><span class="section-number">3</span> What to do</div>
+  <div class="action-grid">
+    <div class="action-card action-card-sfp">
+      <div class="action-title red">SFP confirmed</div>
+      <div class="action-item"><span class="action-label">Entry</span><br>Short at or just below the level</div>
+      <div class="action-item"><span class="action-label">Stop-loss</span><br>Above the wick extreme</div>
+      <div class="action-item"><span class="action-label">Thesis</span><br>Breach was a liquidity sweep, sellers absorbed it</div>
+    </div>
+    <div class="action-card action-card-bo">
+      <div class="action-title green">BO confirmed</div>
+      <div class="action-item"><span class="action-label">Entry</span><br>Wait for retest of level from above</div>
+      <div class="action-item"><span class="action-label">Stop-loss</span><br>Below the old level</div>
+      <div class="action-item"><span class="action-label">Thesis</span><br>Resistance broken, now support</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
