@@ -8,7 +8,7 @@
 
     <meta property="og:description" content="Trading Assistant is an opinionated semi-automated crypto trading strategy" />
 
-    <link rel="stylesheet" href="style.css?v={% version %}"/>
+    <link rel="stylesheet" href="/style.css?v={% version %}"/>
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   </head>
@@ -16,5 +16,16 @@
     {% block content %}
       {{ content | safe }}
     {% endblock %}
+
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 px-6">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+        <span>&copy; 2026 TradingAssistant</span>
+        <nav class="flex gap-4">
+          <a href="/" class="hover:text-slate-300">Home</a>
+          <a href="/terms/" class="hover:text-slate-300">Terms</a>
+          <a href="/privacy/" class="hover:text-slate-300">Privacy</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
