@@ -1,0 +1,246 @@
+---
+permalink: /playbook/
+---
+{% extends "_includes/default.njk" %}
+
+{% block title %}Range Re-Entry Playbook — Trinity HLR{% endblock %}
+
+{% block content %}
+<meta name="robots" content="noindex, nofollow">
+
+<div class="min-h-screen bg-slate-900 text-slate-200 px-6 py-10 max-w-3xl mx-auto">
+
+  {# Header #}
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold text-white mb-1">Range Re-Entry (RRE) Playbook <span class="text-slate-500 font-normal">— Trinity HLR</span></h1>
+    <p class="text-slate-400 text-base mb-4">Price leaves a range by sweeping a level, finds no acceptance outside, and re-enters. You trade the re-entry.</p>
+    <div class="flex gap-4 text-sm">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 font-medium">Fast rejection <span class="text-slate-500">(SFP)</span></span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 font-medium">Slow rejection <span class="text-slate-500">(Fakeout)</span></span>
+    </div>
+    <p class="text-slate-500 text-sm mt-3">Both trap traders on the wrong side. Both are the same trade — rejection at a level.</p>
+  </div>
+
+  {# 1. Biological Check #}
+  <section class="mb-10">
+    <div class="flex items-center gap-2 mb-4 pb-2 border-b border-slate-700">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-800 text-slate-400 text-xs font-bold">1</span>
+      <h2 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Biological Check</h2>
+    </div>
+    <ul class="space-y-1">
+      <li class="px-4 py-3 border-b border-slate-800">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Emotional score below 4/10</span><br><span class="text-slate-400">If stressed, excited, tilted from a loss, or "need" a win — don't trade.</span></div>
+        </label>
+      </li>
+      <li class="px-4 py-3 border-b border-slate-800">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Physically calm</span><br><span class="text-slate-400">Not rushing, not tense, not tired.</span></div>
+        </label>
+      </li>
+      <li class="px-4 py-3">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Accepted the loss</span><br><span class="text-slate-400">Am I okay losing the deployed risk right now? If no, reduce size.</span></div>
+        </label>
+      </li>
+    </ul>
+  </section>
+
+  {# 2. Technical Framework #}
+  <section class="mb-10">
+    <div class="flex items-center gap-2 mb-4 pb-2 border-b border-slate-700">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-800 text-slate-400 text-xs font-bold">2</span>
+      <h2 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Technical Framework</h2>
+    </div>
+
+    {# Shared checks #}
+    <ul class="space-y-1 mb-6">
+      <li class="px-4 py-3 border-b border-slate-800">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Clear V/A shape</span><br><span class="text-slate-400">Is the swing low/high well-defined, obvious on the chart?</span></div>
+        </label>
+      </li>
+      <li class="px-4 py-3 border-b border-slate-800">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Normal price action</span><br><span class="text-slate-400">Is the level formed organically, not a pause in a parabolic spike or crash?</span></div>
+        </label>
+      </li>
+      <li class="px-4 py-3 border-b border-slate-800">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Correct level</span><br><span class="text-slate-400">Is there an older wick below/above that should be the reference instead?</span></div>
+        </label>
+      </li>
+      <li class="px-4 py-3 border-b border-slate-800">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Level strength</span><br><span class="text-slate-400">Has the level been breached before? Breached = weaker. Approached but held = stronger.</span></div>
+        </label>
+      </li>
+      <li class="px-4 py-3">
+        <label class="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+        <div><span class="font-semibold text-slate-100">Coin quality</span><br><span class="text-slate-400">Mind the volume, age, and market cap. Is this a real market or post-spike noise?</span></div>
+        </label>
+      </li>
+    </ul>
+
+    {# Fast Rejection (SFP) #}
+    <div class="bg-slate-800/50 rounded-lg border border-sky-400/20 p-5 mb-4">
+      <h3 class="text-sm font-bold text-sky-400 uppercase tracking-wide mb-4">Fast Rejection (SFP)</h3>
+      <p class="text-slate-400 text-sm mb-4">Wick through the level, close back inside on the same or next candle. The wick is the signal.</p>
+      <ul class="space-y-1">
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">Rejection confirmed on 1H or 4H close</span><br><span class="text-slate-400">Not anticipating.</span></div>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">High volume on the sweep</span><br><span class="text-slate-400">The wick that pierced the level should show elevated volume (RVOL > previous candles). That's stops triggering and liquidity getting grabbed. Low-volume sweep = drift, not rejection — weaker signal.</span></div>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">Candle quality — wick dominates</span><br><span class="text-slate-400">Wick beyond the level at least 2.5–3x the body. Small body = price got there and got slammed back. Fat body near the level or close barely back inside = stall, not rejection — skip.</span></div>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">Two-bar SFP valid</span><br><span class="text-slate-400">Candle A breaks and closes outside, candle B engulfs and closes back inside. Often stronger (more trapped traders).</span></div>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    {# Fast Rejection Candle Quality Images #}
+    <div class="mb-6">
+      <h4 class="text-sm font-semibold text-sky-400 mb-3">Fast Rejection — Candle Quality Reference</h4>
+      <img src="/images/rre-fast-long-candles.png" alt="RRE Fast Long candle quality — strong vs weak patterns" class="w-full rounded-lg border border-slate-700 mb-3">
+      <img src="/images/rre-fast-short-candles.png" alt="RRE Fast Short candle quality — strong vs weak patterns" class="w-full rounded-lg border border-slate-700">
+    </div>
+
+    {# Slow Rejection (Fakeout) #}
+    <div class="bg-slate-800/50 rounded-lg border border-amber-400/20 p-5 mb-4">
+      <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wide mb-4">Slow Rejection (Fakeout)</h3>
+      <p class="text-slate-400 text-sm mb-4">Price breaks the level and lingers outside (looks like a breakout), but fails to build distance, then reclaims with a strong candle closing back inside. The body is the signal.</p>
+      <ul class="space-y-1">
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">Rejection confirmed on 4H close</span><br><span class="text-slate-400">Not anticipating.</span></div>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">Low volume on the breakout</span><br><span class="text-slate-400">The candle(s) that broke the level did so on unremarkable volume. No participation behind the move — nobody showed up for the continuation.</span></div>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">Shallow distance</span><br><span class="text-slate-400">Price didn't travel far from the level after breaking it. Lingering near the breakout point = no conviction.</span></div>
+          </label>
+        </li>
+        <li class="py-2">
+          <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" class="mt-1.5 w-4 h-4 min-w-[1rem] rounded-sm border-2 border-slate-600 bg-transparent accent-emerald-400 cursor-pointer">
+          <div><span class="font-semibold text-slate-100">Reclaim candle quality — body dominates</span><br><span class="text-slate-400">Dominant body (engulfing, marubozu, shaved head/tail) closing firmly back inside the level, on high volume. Body shows conviction on the reversal. Long wick with small body on the reclaim = battle undecided — skip.</span></div>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    {# Slow Rejection Candle Quality Images #}
+    <div class="mb-2">
+      <h4 class="text-sm font-semibold text-amber-400 mb-3">Slow Rejection — Reclaim Candle Quality Reference</h4>
+      <img src="/images/rre-slow-long-candles.png" alt="RRE Slow Long reclaim candle quality — strong vs weak patterns" class="w-full rounded-lg border border-slate-700 mb-3">
+      <img src="/images/rre-slow-short-candles.png" alt="RRE Slow Short reclaim candle quality — strong vs weak patterns" class="w-full rounded-lg border border-slate-700">
+    </div>
+  </section>
+
+  {# 3. Execution #}
+  <section class="mb-10">
+    <div class="flex items-center gap-2 mb-4 pb-2 border-b border-slate-700">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-800 text-slate-400 text-xs font-bold">3</span>
+      <h2 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Execution</h2>
+    </div>
+
+    {# Entry card #}
+    <div class="bg-slate-800 rounded-lg border border-slate-700 border-l-sky-400 border-l-4 p-5 mb-4">
+      <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wide mb-3">Entry — Hybrid 50/50</h3>
+      <p class="text-slate-200 mb-2"><span class="font-semibold text-white">50% on candle close</span> <span class="text-slate-400">(mechanical)</span></p>
+      <p class="text-slate-200 mb-3"><span class="font-semibold text-white">50% retest</span> — manual if watching, limit order if away</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+        <div class="bg-slate-900 rounded-lg p-4">
+          <p class="text-sm font-semibold text-sky-400 mb-1">Fast rejection retest:</p>
+          <p class="text-slate-300">Limit at <span class="font-semibold text-white">50% of the wick</span> (midpoint between level and wick extreme).</p>
+        </div>
+        <div class="bg-slate-900 rounded-lg p-4">
+          <p class="text-sm font-semibold text-amber-400 mb-1">Slow rejection retest:</p>
+          <p class="text-slate-300">Limit at or near <span class="font-semibold text-white">the level itself</span> (reclaim already confirmed failure).</p>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 rounded-lg p-4 mb-3">
+        <p class="text-sm font-semibold text-emerald-400 mb-1">Watching the chart:</p>
+        <p class="text-slate-300">Wait for price to return and show a reaction (wick rejection, engulfing) before adding the second half.</p>
+      </div>
+      <div class="bg-slate-900 rounded-lg p-4 mb-3">
+        <p class="text-sm font-semibold text-slate-400 mb-1">Away from the chart:</p>
+        <p class="text-slate-300">Place the limit order as above. Accept double-loss risk if price reverses through.</p>
+      </div>
+
+      <p class="text-slate-300 mb-2">If the retest never comes, trade the position you have.</p>
+      <div class="bg-slate-900 border border-slate-700 rounded px-4 py-3 font-mono text-sm text-sky-300">
+        size per half = (half risk) ÷ (entry price − SL price)
+      </div>
+    </div>
+
+    {# SL and TP cards #}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-slate-800 rounded-lg border border-slate-700 border-l-red-400 border-l-4 p-5">
+        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wide mb-3">Stop-Loss</h3>
+        <p class="text-slate-200 mb-2"><span class="font-semibold text-white">Fast rejection:</span> beyond the wick extreme</p>
+        <p class="text-slate-200"><span class="font-semibold text-white">Slow rejection:</span> beyond the furthest point price reached outside the level</p>
+      </div>
+
+      <div class="bg-slate-800 rounded-lg border border-slate-700 border-l-emerald-400 border-l-4 p-5">
+        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wide mb-3">Take-Profit</h3>
+        <p class="text-slate-200 mb-2"><span class="font-semibold text-white">TP1 at 1R</span> — sell 50%. Unless a structural target (AVWAP/POC/level) makes more sense.</p>
+        <p class="text-slate-200"><span class="font-semibold text-white">TP2 runner</span> — remaining 50% at structural target (AVWAP, POC, range high/low, next level).</p>
+      </div>
+    </div>
+  </section>
+
+  {# 4. Trade Management #}
+  <section class="mb-10">
+    <div class="flex items-center gap-2 mb-4 pb-2 border-b border-slate-700">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-800 text-slate-400 text-xs font-bold">4</span>
+      <h2 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Trade Management</h2>
+    </div>
+
+    <div class="bg-slate-800 rounded-lg border border-slate-700 border-l-amber-400 border-l-4 p-5">
+      <p class="text-slate-200 mb-3"><span class="font-semibold text-amber-400">After TP1:</span> <span class="font-semibold text-white">remove entry risk</span> — move SL to entry price.</p>
+      <p class="text-slate-200 mb-3"><span class="font-semibold text-amber-400">Peter Brandt rule:</span> once entered, stop can only move <span class="font-semibold text-white">closer</span> to target, never further away.</p>
+      <p class="text-slate-200">
+        <span class="inline-block px-2 py-0.5 rounded text-xs font-bold bg-amber-400/10 text-amber-400 mr-1">experimental</span>
+        <span class="font-semibold text-white">Hugging time stop:</span>
+        <span class="text-slate-400">if price hugs entry without moving toward TP1 for 2-3 days, consider closing 50% or exiting. Not a rigid timer — apply based on price behavior (drifting, no energy, slowly moving against). Still testing.</span>
+      </p>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
